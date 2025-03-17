@@ -35,3 +35,12 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+
+/* QR SCAN */
+body.scanner-active{
+    --backgorund: transparent; 
+    background: transparent;
+    --ion-background-color: transparent;
+    
+}

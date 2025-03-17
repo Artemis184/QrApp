@@ -1,17 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
+    <ion-title style="text-align: center;">
+      SCAN BAR APP
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <h2 style="text-align: center;">RESULTADO:</h2>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- Si hay un código escaneado, mostrar resultado -->
+  <div class="result_center" *ngIf="qr.scanResult">
+    <h2>
+      <a [href]="qr.scanResult" target="_blank">{{ qr.scanResult }}</a>
+    </h2>
+    <br>
+    <div *ngIf="objectJSON">
+      <h3>
+        OBJECTOS QR
+        <ul *ngFor="let data of JsonData">
+          <li>{{ data }}</li>
+        </ul>
+      </h3>
+    </div>
+  </div>
+
+  <!-- Si NO hay un código escaneado y NO se está escaneando -->
+  <div class="no_result" *ngIf="!qr.scanResult && !qr.scan">
+    <img src="/assets/images/scan-qr.webp" alt="">
+    <h2 style="text-align: center; color: gray;">No hay códigos escaneados aún</h2>
+    <p style="text-align: center;">Presiona el botón SCAN para iniciar un escaneo.</p>
+  </div>
+
 </ion-content>
+
+<ion-footer>
+  <ion-button (click)="scaner()" id="btn_qr" expand="block" fill="clear" shape="round" class="btn_qr">
+    SCAN
+    <ion-icon slot="end" name="scan"></ion-icon>
+  </ion-button>
+</ion-footer>

@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'AppQr_BarCode',
   appName: 'app_qr_barcode',
   webDir: 'www'
 };

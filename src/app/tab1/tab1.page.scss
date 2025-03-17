@@ -1,0 +1,43 @@
+
+
+
+.result_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.btn_qr{
+    background-color: #000000 ;
+}
+
+
+.no-scan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+ img {
+    
+    width: 40%; /* Ajusta el tamaño de la imagen según necesites */
+    height: 40%;
+    margin-bottom: 10px; /* Espaciado entre la imagen y el texto */
+
+  }
+
+  .no_result{
+    margin-top: 200px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+  
+  .no-scan h2 {
+    color: gray;
+  }
+  
