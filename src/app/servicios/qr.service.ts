@@ -25,6 +25,9 @@ export class QrService {
       this.StopScan();
       return;
     }
+    
+    this.scanResult = ''; // Limpiar el resultado anterior
+    this.scan = true;
 
     this.scan = true;
     const permission = await this.CheckPermission();  // Esperar la respuesta de los permisos
