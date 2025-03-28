@@ -7,6 +7,8 @@ import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 export class QrService {
   scan: boolean = false;
   scanResult: string = '';
+  scannedCodes: string[] = []; // Lista para almacenar los códigos escaneados
+
 
   constructor() {}
 
@@ -52,6 +54,9 @@ export class QrService {
 
       if (result.hasContent) {
         this.scanResult = result.content;
+        console.log(this.scanResult) //AQUI VEO MI VARIABLE
+        this.scannedCodes.push(this.scanResult); // Agregar el código escaneado a la lista
+
       } else {
         this.scanResult = 'No se detectó ningún código';
       }
@@ -69,4 +74,9 @@ export class QrService {
     this.scan = false;
     this.scanResult = 'Escaneo cancelado';
   }
+
+  getScannedCodes(): string[] {
+    return this.scannedCodes;
+  }
+
 }
